@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hdi-pubsub
+  labels:
+    app: hdi-pubsub
+spec:
+  selector:
+    matchLabels:
+      app: hdi-pubsub
+  template:
+    metadata:
+      annotations:
+        traffic.sidecar.istio.io/excludeOutboundIPRanges: 0.0.0.0/0
+      labels:
+        app: hdi-pubsub
+    spec:
+      containers:
+        - name: hdi-pubsub-api
+          image: gcr.io/hdi-poc-242615/hdi-pubsub:latest
+          ports:
+            - containerPort: 8080
+

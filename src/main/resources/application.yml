@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: webflux-demo
+  data:
+    mongodb:
+      #uri: mongodb://edubossa:ews-2013@ds139242.mlab.com:39242/payments
+      uri: mongodb+srv://hdi-mogodb-user:86f3aCACHAz27UJwkAmn7f72@mongohdicluster-dnmya.gcp.mongodb.net/test?retryWrites=true&w=majority
+
